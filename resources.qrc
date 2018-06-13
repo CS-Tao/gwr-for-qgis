@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/plugins/gwr" >
+        <file>icon.png</file>
+        <file>icons/action_refresh.png</file>
+        <file>icons/download.svg</file>
+        <file>icons/mActionSetProjection.svg</file>
+        <file>icons/cancel.svg</file>
+        <file>icons/earth.png</file>
+        <file>icons/mapcalc_save.png</file>
+    </qresource>
+</RCC>
