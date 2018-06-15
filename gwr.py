@@ -23,9 +23,10 @@
 """
 import numpy as np
 from qgis.utils import Qgis
+from qgis.core import QgsVectorLayer
 from PyQt5.QtCore import QSettings, QCoreApplication, QSize
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAction, QAbstractItemView
+from PyQt5.QtWidgets import QAction, QAbstractItemView, QFileDialog, QTableWidgetItem
 
 import os, sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
@@ -219,18 +220,16 @@ class gwr:
         self.initFormByLayer(self.currentLayer)
 
 
-
     def openFile(self):
         # QMessageBox.question(self.dlg, 'test', 'test', QMessageBox.Ok)
         fileName, _ = QFileDialog.getOpenFileName(self.dlg, '打开文件', os.path.dirname(__file__), r'shp(*.shp)')
         if not fileName:
             return
-        layer = iface.addVectorLayer(fileName, 'points', 'ogr')
+        layer = self.iface.addVectorLayer(fileName, 'points', 'ogr')
         self.vectorLayers.append(layer)
         self.dlg.comboBox_VectorLayers.addItem(layer.name())
         self.dlg.comboBox_VectorLayers.setCurrentIndex(self.dlg.comboBox_VectorLayers.count() - 1)
         self.initFormByLayer(layer)
-
 
 
     def refreshLayersList(self):

@@ -5,6 +5,7 @@ from PyQt5 import uic
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication, QSize
+from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'result_display_base.ui'))
